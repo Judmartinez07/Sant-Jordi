@@ -1,0 +1,36 @@
+.grid{
+    width: 560px;
+    height: 560px;
+    border: solid palevioletred;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grid div{
+    width: 20px;
+    height: 20px;
+}
+
+.red{
+    background-color: red;
+}
+
+.white{
+    background-color: white;
+}
+.green{
+    background-color: green;
+}
+.pink{
+    background-color: pink;
+}
+
+.black{
+    background-color: black;
+}
+
+
+
+
+
+
