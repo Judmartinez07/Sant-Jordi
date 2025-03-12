@@ -11,8 +11,8 @@
     height: 20px;
 }
 
-.red{
-    background-color: red;
+.rgb{
+    background-color: rgb(194, 129, 188);
 }
 
 .white{
@@ -22,7 +22,7 @@
     background-color: green;
 }
 .pink{
-    background-color: pink;
+    background-image: url(./img/rosa.png);
 }
 
 .black{
