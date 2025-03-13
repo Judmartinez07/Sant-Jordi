@@ -11,26 +11,67 @@
     height: 20px;
 }
 
-.rgb{
-    background-color: rgb(194, 129, 188);
-}
+// 0 buit
+// 1 paret
+// 2 cova de drac
+// 3 rosa
+// 4 petalos
 
 .white{
     background-color: white;
 }
-.green{
-    background-color: green;
+
+.muro{
+    background-image: url(./img/muros.jpeg);
+    background-size: cover;
 }
-.pink{
+
+.darkgray{
+    background-color:darkgray;
+}
+.rosa{
     background-image: url(./img/rosa.png);
+    background-size: cover;
 }
 
-.black{
-    background-color: black;
+.petalos{
+    background-image: url(./img/petalos.png);
+    background-size: cover;
+}
+
+.libro{
+    background-image: url(./img/libro.jpg);
+    background-size: cover;
 }
 
 
+.princep{
+    background-image: url(./img/principe.png);
+    background-size: cover
+}
 
+.drac-azul{
+    background-image: url(./img/dragon\ azul\ derecha.png);
+    background-size: cover;
+}
 
+.drac-taronja{
+    background-image: url(./img/dragon\ naranja\ derecha.png);
+    background-size: cover;
+}
+
+.drac-vermell{
+    background-image: url(./img/Dragon\ rojo\ derecha.png);
+    background-size: cover;
+}
+
+.drac-verd{
+    background-image: url(./img/Dragon\ verde\ derecha.png);
+    background-size: cover;
+}
+
+.drac-asustat{
+
+}
 
 
