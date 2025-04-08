@@ -19,11 +19,11 @@ const layout = [
     0,4,0,0,0,0,0,4,0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,0,4,0,
     0,4,4,4,4,3,4,4,4,4,4,4,4,4,3,4,4,4,4,3,4,4,4,4,4,4,4,0,
     0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,0,
-    0,4,4,4,4,4,4,4,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,
+    0,4,4,4,5,4,4,4,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,
     0,4,0,0,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,0,
     0,4,4,4,4,4,4,4,0,0,0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,0,
     0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,0,
-    4,4,4,4,4,4,4,4,0,0,0,0,0,0,0,0,4,4,4,3,4,3,4,4,4,4,5,4,
+    1,1,1,1,1,1,1,4,0,0,0,0,0,0,0,0,4,4,3,4,1,1,1,1,1,1,1,1,
     0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,
     0,4,4,3,4,4,4,4,4,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,
     0,4,0,0,2,2,2,2,1,4,4,4,4,3,4,4,4,0,0,0,0,0,0,0,0,0,0,0,
@@ -168,12 +168,28 @@ class Drac {
 }
 
 const dracs =[
-    new Drac('drac-azul', 348, 250),
-    new Drac('drac-taronja',376, 250),
-    new Drac('drac-vermell', 348, 250),
-    new Drac('drac-verd', 248, 250),
+    new Drac('drac-azul', 455, 250),
+    new Drac('drac-taronja',120, 250),
+    new Drac('drac-vermell', 130, 250),
+    new Drac('drac-verd', 577, 250)
 ]
 
-console.log(dracs)
+//console.log(dracs)
+dracs.forEach(drac=> squares[drac.currentIndex].classList.add(drac.className, 'drac'))
+
+dracs.forEach(drac=>moveDrac_(drac))
+
+function moveDrac(drac){
+    const directions = [-1,1, width, -width]
+    let direction = directions[Math.floor(Math.random() *directions.length)]
+    
+    if(
+        !squares[drac.currentIndex +direction].classList.contains('muro') &&
+        !squares[drac.currentIndex +direction].classList.contains('drac')  
+    ){
+
+    }
+}
+
 })
 

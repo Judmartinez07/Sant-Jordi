@@ -11,12 +11,6 @@
     height: 20px;
 }
 
-// 0 buit
-// 1 paret
-// 2 cova de drac
-// 3 rosa
-// 4 petalos
-
 .white{
     background-color: white;
 }
@@ -56,17 +50,17 @@
 }
 
 .drac-taronja{
-    background-image: url(./img/dragon\ naranja\ derecha.png);
+    background-image: url(./img/dragon\ naranja\ izquierda.png);
     background-size: cover;
 }
 
 .drac-vermell{
-    background-image: url(./img/Dragon\ rojo\ derecha.png);
+    content: url(./img/Dragon\ rojo\ izquierda.png);
     background-size: cover;
 }
 
 .drac-verd{
-    background-image: url(./img/Dragon\ verde\ derecha.png);
+    background-image: url(./img/Dragon\ verde\ izquierda.png);
     background-size: cover;
 }
 
