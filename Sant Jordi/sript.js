@@ -142,13 +142,24 @@ if (squares[posicioPrincep].classList.contains('rosa')){
     scoreDisplay.innerHTML=score
     squares[posicioPrincep].classList.remove('rosa')
 
+    espantaDracs(true)
+    setTimeout(()=>espantaDracs(false),10000)
+
 }
+
+
+
 }
+
+function espantaDracs(scaredDrac){
+    dracs.forEach(drac=> drac.isScared=scaredDrac)
+}
+
 
 function cogerLibro(){
 
     if (squares[posicioPrincep].classList.contains('libro')){
-        score+=15
+        score+=20
         scoreDisplay.innerHTML=score
         squares[posicioPrincep].classList.remove('libro')
     }
@@ -169,26 +180,43 @@ class Drac {
 
 const dracs =[
     new Drac('drac-azul', 455, 250),
-    new Drac('drac-taronja',120, 250),
-    new Drac('drac-vermell', 130, 250),
-    new Drac('drac-verd', 577, 250)
+    new Drac('drac-taronja',120, 400),
+    new Drac('drac-vermell', 130, 300),
+    new Drac('drac-verd', 577, 500)
 ]
 
 //console.log(dracs)
 dracs.forEach(drac=> squares[drac.currentIndex].classList.add(drac.className, 'drac'))
 
-dracs.forEach(drac=>moveDrac_(drac))
+dracs.forEach(drac=>moveDrac(drac))
 
 function moveDrac(drac){
     const directions = [-1,1, width, -width]
     let direction = directions[Math.floor(Math.random() *directions.length)]
-    
+
+drac.timerId = setInterval(function(){
     if(
         !squares[drac.currentIndex +direction].classList.contains('muro') &&
         !squares[drac.currentIndex +direction].classList.contains('drac')  
     ){
+        squares[drac.currentIndex].classList.remove(drac.className, 'drac', 'drac-espantat')
+        drac.currentIndex+=direction
+        squares[drac.currentIndex].classList.add(drac.className, 'drac')
 
-    }
+
+
+    } else direction = directions[Math.floor(Math.random() *directions.length)]
+    
+if(drac.isScared){
+    squares[drac.currentIndex].classList.add('drac-espantat')
+
+}
+
+
+
+
+},drac.speed
+)
 }
 
 })
