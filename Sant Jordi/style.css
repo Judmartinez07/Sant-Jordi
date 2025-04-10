@@ -55,7 +55,7 @@
 }
 
 .drac-vermell{
-    content: url(./img/Dragon\ rojo\ izquierda.png);
+    background-image: url(./img/Dragon\ rojo\ izquierda.png);
     background-size: cover;
 }
 

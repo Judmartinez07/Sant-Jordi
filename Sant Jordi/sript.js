@@ -143,7 +143,7 @@ if (squares[posicioPrincep].classList.contains('rosa')){
     squares[posicioPrincep].classList.remove('rosa')
 
     espantaDracs(true)
-    setTimeout(()=>espantaDracs(false),10000)
+    setTimeout(()=>espantaDracs(false),5000)
 
 }
 
@@ -210,6 +210,15 @@ drac.timerId = setInterval(function(){
 if(drac.isScared){
     squares[drac.currentIndex].classList.add('drac-espantat')
 
+}
+
+if(drac.isScared && squares[drac.currentIndex].classList.contains ('princep')){
+    score+=100
+    scoreDisplay.innerHTML = score
+    squares[drac.currentIndex].classList.remove(drac.className, 'drac', 'drac-espantat')
+    drac.currentIndex=drac.startIndex
+    drac.isScared=false
+    squares[drac.currentIndex].classList.add(drac.className, 'drac')
 }
 
 
