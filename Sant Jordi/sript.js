@@ -112,8 +112,8 @@ function movePrincep(e){
     squares[posicioPrincep].classList.add("princep");
     cogerPetalos()
     rosaCogida()
-    // checkForWin()
-    //checkForgameOver()
+    checkForWin()
+    checkForgameOver()
     cogerLibro()
 
 
@@ -221,12 +221,36 @@ if(drac.isScared && squares[drac.currentIndex].classList.contains ('princep')){
     squares[drac.currentIndex].classList.add(drac.className, 'drac')
 }
 
-
+checkForgameOver()
 
 
 },drac.speed
 )
 }
+
+function checkForgameOver(){
+
+    if(
+        squares[posicioPrincep].classList.contains('drac') && 
+        !squares[posicioPrincep].classList.contains('drac-espantat') 
+    ){
+        dracs.forEach(drac =>clearInterval(drac.timerId))
+        document.removeEventListener('keyup', movePrincep)
+         setTimeout(function(){alert('GAME OVER')},1500)
+
+
+    }
+}
+
+function checkForWin(){
+    if(score>= 416){
+
+        dracs.forEach(drac =>clearInterval(drac.timerId))
+        document.removeEventListener('keyup', movePrincep)
+        setTimeout(function(){alert('HAS DERROTAT ALS DRACS')},1500)}
+
+}
+
 
 })
 
